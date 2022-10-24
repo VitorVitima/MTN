@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    <header>
+        <h1>Periodo do dia</h1>
+    </header>
+    <main>
+        <h1 id="h1Main">São <span id="horas">xxx</span> horas</h1>
+        <section>
+            <img id="noite" src="imagens/noiteEdited.jpg" alt="noite">
+            <img id="manha" src="imagens/manhâ.jpg" alt="manha">
+            <img id="tarde" src="imagens/tarde.jpg" alt="tarde">
+        </section>
+    </main>
+    <footer>
+        <a href="https://twitter.com/VVitima">@VVitima</a>
+    </footer>
+    <script>
+        var data = new Date()
+        var hora = data.getHours()
+        document.querySelector('#horas').innerHTML = hora
+        
+        if (hora >= 6 && hora < 12){
+            document.querySelector('#manha').style.display = 'block'
+            document.querySelector('#body').style.backgroundColor = "#dddc9c"
+        } else if (hora >= 12 && hora < 18){
+            document.querySelector('#tarde').style.display = 'block'
+            document.querySelector('#body').style.backgroundColor = '#2e8176' 
+        } else {
+            document.querySelector('#noite').style.display = "block"
+        }
+    </script>
+</body>
+</html>
