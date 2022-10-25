@@ -20,7 +20,7 @@
         </section>
     </main>
     <footer>
-        <a href="https://twitter.com/VVitima">@VVitima</a>
+        <a id="link" href="https://twitter.com/VVitima">@VVitima</a>
     </footer>
     <script>
         var data = new Date()
@@ -28,11 +28,20 @@
         document.querySelector('#horas').innerHTML = hora
         
         if (hora >= 6 && hora < 12){
+            // tem outra forma de trocar de imagens, mas eu usei essa sem saber que dava pra alterar o src da tag <img>
             document.querySelector('#manha').style.display = 'block'
             document.querySelector('#body').style.backgroundColor = "#dddc9c"
         } else if (hora >= 12 && hora < 18){
             document.querySelector('#tarde').style.display = 'block'
-            document.querySelector('#body').style.backgroundColor = '#2e8176' 
+            document.querySelector('#body').style.backgroundColor = '#2e8176'
+            document.querySelector('#link').addEventListener('mouseenter', entrouLink)
+            document.querySelector('#link').addEventListener('mouseout', saiuLink)
+                function entrouLink(){
+                    document.querySelector('#link').style.color = "black"
+                }
+                function saiuLink (){
+                    document.querySelector('#link').style.color = 'whitesmoke'
+                }
         } else {
             document.querySelector('#noite').style.display = "block"
         }

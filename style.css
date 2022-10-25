@@ -34,3 +34,11 @@ footer {
     transform: translate(-50%, 0px);
     margin-top: 20px;
 }
+footer a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: arial;
+}
+footer a:hover {
+    color: #999999;
+}
